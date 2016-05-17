@@ -38,6 +38,7 @@ class Calculator{
     return typeof param === Number;
   }
 }
-/*let calculator = new Calculator();
 
-module.exports = calculator;*/
+
+let calculator = new Calculator();
+module.exports = calculator;

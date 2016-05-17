@@ -1,4 +1,6 @@
-//import Calculator from './Calculator.js';
+/*import Calculator from './Calculator.js';
+
+var calculator = new Calculator();*/
 
 let calculator = require('./Calculator.js');
 
@@ -48,6 +50,7 @@ export default class CalForm{
   }
 
   numberListener(num){
+    console.log("number");
     event.preventDefault();
     console.log(num);
     var str = String(document.getElementById('result').value);
@@ -210,8 +213,8 @@ export default class CalForm{
   }
 }
 
-/*let calForm = new CalForm();
-module.exports = calForm;*/
+let calForm = new CalForm();
+module.exports = calForm;
 
 
 
