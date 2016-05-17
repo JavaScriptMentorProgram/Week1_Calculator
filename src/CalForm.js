@@ -50,10 +50,8 @@ export default class CalForm{
   }
 
   numberListener(num){
-    console.log("number");
     event.preventDefault();
-    console.log(num);
-    var str = String(document.getElementById('result').value);
+    let str = String(document.getElementById('result').value);
     if( str != '0'){
       if(str != '-0'){
         if(this.operatorInputState == 0){
@@ -75,7 +73,7 @@ export default class CalForm{
 
   zeroListener(){
     event.preventDefault();
-    var str = String(document.getElementById('result').value);
+    let str = String(document.getElementById('result').value);
     if(str!="0"){
       if(this.operatorInputState == 0){
         str = str + '00';
@@ -93,7 +91,7 @@ export default class CalForm{
 
   dotListener(){
     event.preventDefault();
-    var str = String(document.getElementById('result').value);
+    let str = String(document.getElementById('result').value);
     if( str != '0'){
       if(this.operatorInputState == 0){
         str = str;
@@ -104,7 +102,7 @@ export default class CalForm{
       str = '0';
     }
 
-    for (var i = 0; i < str.length; i++){
+    for (let i = 0; i < str.length; i++){
       if(str.substring(i,1) == '.')
         return false;
     }
@@ -116,7 +114,7 @@ export default class CalForm{
 
   backspaceListener(){
     event.preventDefault();
-    var str = String(document.getElementById('result').value);
+    let str = String(document.getElementById('result').value);
 
     if(str != '0'){
       str = str;
@@ -133,7 +131,6 @@ export default class CalForm{
     }
 
     document.getElementById('result').value = str;
-    console.log(str);
   }
 
   clearListener(){
@@ -150,7 +147,6 @@ export default class CalForm{
 
   addListener(ob){
     event.preventDefault();
-    console.log('this is add action');
     ob.calculate();
     this.operatorInputState = 1;
     this.operator = 1;
@@ -158,7 +154,6 @@ export default class CalForm{
 
   subListener(ob){
     event.preventDefault();
-    console.log('this is sub action');
     ob.calculate();
     this.operatorInputState = 1;
     this.operator = 2;
@@ -166,7 +161,6 @@ export default class CalForm{
 
   multiListener(ob){
     event.preventDefault();
-    console.log('this is multi action');
     ob.calculate();
     this.operatorInputState = 1;
     this.operator = 3;
@@ -174,7 +168,6 @@ export default class CalForm{
 
   divListener(ob){
     event.preventDefault();
-    console.log('this is div action');
     ob.calculate();
     this.operatorInputState = 1;
     this.operator = 4;
@@ -182,7 +175,6 @@ export default class CalForm{
 
   modeListener(ob){
     event.preventDefault();
-    console.log('this is mode action');
     ob.calculate();
     this.operatorInputState = 1;
     this.operator = 5;
@@ -190,7 +182,6 @@ export default class CalForm{
 
   equalListener(ob){
     event.preventDefault();
-    console.log('this is euqal action');
     ob.calculate();
     this.operatorInputState = 1;
     this.numLeft = 0;
@@ -200,9 +191,9 @@ export default class CalForm{
 
   positiveListener(){
     event.preventDefault();
-    var str = String(document.getElementById('result').value);
-    var firstLetter = str.substr(0,1);
-    var tempStr = null;
+    let str = String(document.getElementById('result').value);
+    let firstLetter = str.substr(0,1);
+    let tempStr = null;
     if(firstLetter != '-'){
       tempStr = '-' + str;
     }else{
@@ -215,7 +206,3 @@ export default class CalForm{
 
 let calForm = new CalForm();
 module.exports = calForm;
-
-
-
-

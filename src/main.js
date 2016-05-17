@@ -12,7 +12,6 @@ function addListeners(){
     switch(buttons[i].getAttribute('type')){
       case 'number': buttons[i].addEventListener('click',function(){
         event.preventDefault();
-        console.log("number");
         calForm.numberListener(this.value);
       }); break;
       case 'clear': buttons[i].addEventListener('click', calForm.clearListener); break;
